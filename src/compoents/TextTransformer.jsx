@@ -3,6 +3,7 @@ import copy from "copy-to-clipboard";
 import { Box, Button, Input, NumberInput, NumberInputField, useToast } from "@chakra-ui/react";
 import ShowBox from "./ShowBox";
 
+
 const TextTransformer = () => {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
@@ -15,15 +16,18 @@ const TextTransformer = () => {
   const [copy_cny, setCopyCny] = useState("");
   const toast = useToast();
 
+  
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
 
+  
   const transformText = () => {
     setOutputText(inputText.toUpperCase());
     setInputText("");
   };
 
+  
   const copyToClipboard = () => {
     copy(outputText);
     toast({
@@ -33,6 +37,7 @@ const TextTransformer = () => {
       isClosable: true,
     });
   };
+  
 
   const copyUsd = () => {
     copy(copy_usd);
@@ -43,6 +48,7 @@ const TextTransformer = () => {
       isClosable: true,
     });
   }
+  
 
   const copyCny = () => {
     copy(copy_cny);
@@ -53,6 +59,7 @@ const TextTransformer = () => {
       isClosable: true,
     });
   }
+  
 
   const copyEur = () => {
     copy(copy_eur);
